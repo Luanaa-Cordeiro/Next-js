@@ -1,5 +1,6 @@
 import Link from "next/link"
 import App from "./App"
+import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 
 
 export function FormQuest(){
@@ -7,13 +8,24 @@ export function FormQuest(){
     
 return(
 
- <div className="mt-10 max-w-6xl mx-auto bg-white shadow-md rounded-lg">
-  <h2 className="p-6 text-lg font-semibold">Cadastrar Questão Objetiva</h2>
-  <hr className="w-full border-0 h-0.5 bg-[rgba(215,215,215,0.5)]" />
+ <div className="bg-black mt-10 max-w-6xl mx-auto bg-white shadow-md rounded-lg">
+  <div className="bg-[rgba(215,215,215,0.2)] p-6">
+    <div className="flex justify-between items-center">
+      <h2 className="text-lg font-semibold">Cadastrar Questão Objetiva</h2>
+      <button
+  type="button"
+  className="flex items-center text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
+>
+  <ArrowLeftIcon className="w-5 h-5 mr-2" />
+  Voltar
+</button>
+    </div>
+  </div>
+ <hr className="w-full border-0 h-0.5 bg-[rgba(215,215,215,0.2)]" />
 
-      <form className="p-6 space-y-4">
+      <form className=" space-y-4">
   {/* Linha única: Autor, Ano, Adaptada, Dificuldade */}
-  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+  <div className="p-6 grid grid-cols-1 md:grid-cols-4 gap-4">
     <div>
       <label className="block text-sm font-medium text-gray-700">
         Autor da Questão:
@@ -34,21 +46,21 @@ return(
       />
     </div>
 
-    <div className="flex flex-col items-en">
-      <label className="block text-sm font-medium text-gray-700">
-        Adaptada:
-      </label>
-      <div className="flex items-center space-x-4 mt-2">
-        <label className="flex items-center space-x-1">
-          <input type="radio" name="adaptada" className="text-blue-600" />
-          <span>Sim</span>
-        </label>
-        <label className="flex items-center space-x-1">
-          <input type="radio" name="adaptada" className="text-blue-600" />
-          <span>Não</span>
-        </label>
-      </div>
-    </div>
+    <div className="flex flex-col sm:items-center sm:space-x-10">
+  <label className="block text-sm font-medium text-gray-700 mb-2 sm:mb-3">
+    Adaptada:
+  </label>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-1">
+      <input type="radio" name="adaptada" className="text-blue-600" />
+      <span>Sim</span>
+    </label>
+    <label className="flex items-center space-x-1">
+      <input type="radio" name="adaptada" className="text-blue-600" />
+      <span>Não</span>
+    </label>
+  </div>
+</div>
 
     <div>
       <label className="block text-sm font-medium text-gray-700">
@@ -66,7 +78,7 @@ return(
   </div>
 
         {/* Disciplina e Conteúdo */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
+      <div className="bg-[rgba(215,215,215,0.2)] p-6 grid grid-cols-1 md:grid-cols-3 gap-4 flex justify-between">
   {/* Disciplina */}
   <div>
     <label className="block text-sm font-medium text-gray-700">
@@ -111,18 +123,18 @@ return(
   </div>
 
   {/* Botão Adicionar novo conteúdo */}
-  <div className="flex flex-col items-end">
+  <div className="flex flex-col items-center gap-2">
     <span className="mb-2">Não achou o conteúdo desejado?</span>
     <button
       type="button"
-      className="w-fit px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700"
+      className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
     >
       + Adicionar novo conteúdo
     </button>
   </div>
 </div>
         {/* Enunciado */}
-        <div>
+        <div className="p-6">
           <label className="mb-3 block text-sm font-medium text-gray-700">
             Enunciado: <span className="text-red-500">*</span>
           </label>

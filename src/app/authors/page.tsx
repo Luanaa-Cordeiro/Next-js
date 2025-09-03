@@ -1,3 +1,10 @@
+import { Metadata } from "next"
+
+export const metadata: Metadata ={
+  title: "Authors"
+}
+
+
 export default function Authors(){
     return(
         <div>
